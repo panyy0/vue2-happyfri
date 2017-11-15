@@ -75,8 +75,8 @@ export default {
 	  	//到达最后一题，交卷，请空定时器，跳转分数页面
 	  	submitAnswer(){
 	  		if (this.choosedNum !== null) {
-	  			this.addNum(this.choosedId)
-	  			clearInterval(this.timer)
+	  			this.addNum(this.choosedId);
+	  			clearInterval(this.timer);
 	  			this.$router.push('score')
   			}else{
   				alert('您还没有选择答案哦')
@@ -108,7 +108,7 @@ export default {
 			height: 0.7rem;
 			width: 2.5rem;
 			font-size: 0.6rem;
-			font-family: '黑体';
+			font-family: '黑体',serif;
 			font-weight: 600;
 			color: #a57c50;
 			text-align: center;
@@ -121,12 +121,11 @@ export default {
 		position: absolute;
 		top: 4.1rem;
 		left: 1rem;
-	}	
-	.home_logo{
-		background-image: url(../images/1-2.png);
-		background-size: 13.142rem 100%;
-		background-position: right center;
 	}
+	.home_logo{
+    background-size: 13.142rem 100%;
+    background: url(../images/1-2.png) right center;
+  }
 	.item_back{
 		background-image: url(../images/2-1.png);
 		background-size: 100% 100%;
@@ -183,7 +182,7 @@ export default {
 			text-align: center;
 			margin-right: 0.3rem;
 			font-size: 0.5rem;
-			font-family: 'Arial';
+			font-family: 'Arial',serif;
 		}
 		.has_choosed{
 			background-color: #ffd400;

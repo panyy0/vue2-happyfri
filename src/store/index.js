@@ -169,7 +169,7 @@ const state = {
 		}]
 	}],
 	answerid: [], //答案id
-}
+};
 
 export default new Vuex.Store({
 	state,

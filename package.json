@@ -2,7 +2,7 @@
   "name": "happyfri",
   "version": "1.0.2",
   "description": "vue2-happyfri",
-  "author": "cangdu <1264889788@qq.com>",
+  "author": "panyy0@163.com",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
