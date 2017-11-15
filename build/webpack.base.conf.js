@@ -2,6 +2,7 @@ const path = require('path');
 const config = require('../config');
 const utils = require('./utils');
 const projectRoot = path.resolve(__dirname, '../');
+const vuxLoader = require('vux-loader');
 
 const env = process.env.NODE_ENV;
     // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
@@ -10,7 +11,7 @@ const cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap);
 const cssSourceMapProd = (env === 'production' && config.build.productionSourceMap);
 const useCssSourceMap = cssSourceMapDev || cssSourceMapProd;
 
-module.exports = {
+module.exports = vuxLoader.merge({
     entry: {
         app: './src/main.js'
     },
@@ -70,4 +71,8 @@ module.exports = {
             })
         ]
     }
-};
+}, {
+  plugins: [{
+    name: 'vux-ui'
+  }]
+});

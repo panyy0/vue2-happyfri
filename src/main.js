@@ -5,12 +5,12 @@ import store from "./store/";
 import "./style/common";
 import "./config/rem";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 const router = new VueRouter({
 	routes
-})
+});
 
 new Vue({
 	router,
 	store,
-}).$mount('#app')
+}).$mount('#app');
