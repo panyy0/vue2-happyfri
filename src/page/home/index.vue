@@ -1,80 +1,74 @@
 <template>
   <div id="home">
-    <ul>
-      <div class="home_container">
-
-
+      <div class="home_container"  id="homeContainer">
         <div>
-          <div class="top-bar">
-            <div class="section">
-              <img class='image' src='../../images/tab/home_pic_baby@2x.png'/>
-            </div>
-
-            <div class='operate'>
-              <div class='search-icon-view'>
-                <img src='../../images/tab/home_icon_search@2x.png'/>
-              </div>
-              <div class="section text-view">
-                <div class='text'>今天想听什么</div>
-              </div>
-              <div class='scan-icon-view'>
-                <img src='../../images/tab/home_icon_scan@2x.png'/>
-              </div>
-            </div>
-
-            <div class='news-icon-view'>
-              <img src='../../images/tab/home_icon_news@2x.png'/>
-            </div>
-
-          </div>
-
-          <swiper auto height="4.4rem" dots-position="center" :list="bannerList" v-model="bannerIndex" dots-class="custom-bottom"
-                  @on-index-change="onBannerIndexChange"></swiper>
-        </div>
-
-        <div class='items'>
-          <div class='item' v-for="item in itemList">
-            <div class="item-content">
-              <img :src="item.url"/>
-              <span>{{ item.name }}</span>
-            </div>
-          </div>
-        </div>
-
-        <div class='recommendation-items'>
-          <div class='recommendation-item-title'>
-            <div class='title-text'>
-              <img class='left' src='../../images/tab/home_icon_grass_right@2x.png'/>
-              <span class='text'>今日推荐</span>
-              <img class='right' src='../../images/tab/home_icon_grass_right@2x.png'/>
-            </div>
-
-            <div class='more'>
-              <span>更多</span>
-            </div>
-
-          </div>
-
           <div>
-            <div class='recommendation-item-content' v-for="item in recommendList" >
-              <div >
+            <div class="top-bar">
+              <div class="section">
+                <img class='image' src='../../images/tab/home_pic_baby@2x.png'/>
+              </div>
+
+              <div class='operate'>
+                <div class='search-icon-view'>
+                  <img src='../../images/tab/home_icon_search@2x.png'/>
+                </div>
+                <div class="section text-view">
+                  <div class='text'>今天想听什么</div>
+                </div>
+                <div class='scan-icon-view'>
+                  <img src='../../images/tab/home_icon_scan@2x.png'/>
+                </div>
+              </div>
+
+              <div class='news-icon-view'>
+                <img src='../../images/tab/home_icon_news@2x.png'/>
+              </div>
+
+            </div>
+
+            <swiper auto height="4.4rem" dots-position="center" :list="bannerList" v-model="bannerIndex" dots-class="custom-bottom"
+                    @on-index-change="onBannerIndexChange"></swiper>
+          </div>
+
+          <div class='items'>
+            <div class='item' v-for="item in itemList">
+              <div class="item-content">
                 <img :src="item.url"/>
-                <span class='text'>{{ item.name }}</span>
+                <span>{{ item.name }}</span>
               </div>
             </div>
+          </div>
+
+          <div class='recommendation-items' >
+            <div class='recommendation-item-title'>
+              <div class='title-text'>
+                <img class='left' src='../../images/tab/home_icon_grass_right@2x.png'/>
+                <span class='text'>今日推荐</span>
+                <img class='right' src='../../images/tab/home_icon_grass_right@2x.png'/>
+              </div>
+
+              <div class='more'>
+                <span>更多</span>
+              </div>
+
+            </div>
+
+            <div>
+              <div class='recommendation-item-content' v-for="item in recommendList" >
+                <div >
+                  <img :src="item.url"/>
+                  <span class='text'>{{ item.name }}</span>
+                </div>
+              </div>
+            </div>
+
           </div>
 
         </div>
       </div>
-    </ul>
 
     <div>
-      <tabbar>
-        <tabbar-item v-for="item in tabBarList" :link="item.url">
-          <img :style="item.style" slot="icon" :src="item.image">
-          <span v-if="item.text" slot="label">{{ item.text }}</span>
-        </tabbar-item>
-      </tabbar>
+      <SysTabBar></SysTabBar>
     </div>
 
   </div>
@@ -83,15 +77,9 @@
 </template>
 
 <script>
-  import {Tabbar, TabbarItem, Swiper, SwiperItem} from 'vux';
+  import {Swiper, SwiperItem} from 'vux';
+  import SysTabBar from '../../components/TabBar'
   import IScroll from "iscroll";
-
-
-  import TAB_FIND_ICON from '../../images/tab/home_icon_find_unselected@2x.png';
-  import TAB_CLASSIFY_ICON from '../../images/tab/home_icon_classify_unselected@2x.png';
-  import TAB_PLAY_ICON from '../../images/tab/home_icon_play@2x.png';
-  import TAB_MARKET_ICON from '../../images/tab/home_icon_market_unselected@2x.png';
-  import TAB_MINE_ICON from '../../images/tab/home_icon_mine_unselected@2x.png';
 
   import BANNER_1 from '../../images/banner/banner@2x.png';
 
@@ -125,38 +113,6 @@
           fallbackImg: 'https://static.vux.li/demo/3.jpg'
         }]
         ,bannerIndex: 0
-
-        ,tabBarList: [
-          {
-            image: TAB_FIND_ICON
-            , selectedImage: '../../images/tab/home_icon_find_selected@2x.png'
-            , text: '发现',
-            url: 'item'
-          }
-          , {
-            image: TAB_CLASSIFY_ICON
-            , selectedImage: '../../images/tab/home_icon_classify_unselected@2x.png'
-            , text: '分类',
-            url: 'item'
-          }
-          , {
-            image: TAB_PLAY_ICON
-            , style: 'position: relative; top: -0.2rem; left: -0.2rem; width: 1rem; height: 1rem;',
-            url: 'item'
-          }
-          , {
-            image: TAB_MARKET_ICON
-            , selectedImage: '../../images/tab/home_icon_market_unselected@2x.png'
-            , text: '乐买',
-            url: 'item'
-          }
-          , {
-            image: TAB_MINE_ICON
-            , selectedImage: '../../images/tab/home_icon_mine_unselected@2x.png'
-            , text: '我的',
-            url: 'item'
-          }
-        ]
 
         , itemList: [
           {
@@ -210,8 +166,7 @@
       }
     },
     components: {
-      Tabbar
-      , TabbarItem
+      SysTabBar
       , Swiper
       , SwiperItem
     },
@@ -224,7 +179,7 @@
     mounted: function() {
       let self = this;
       self.$nextTick(function() {
-        self.homeScroll = new IScroll('#home', {
+        self.homeScroll = new IScroll('#homeContainer', {
           useTransform: true,
           // scrollbars: true,
           tap : true,
@@ -259,6 +214,9 @@
   .home_container {
 
     background: #f4f4f4;
+    position: absolute;
+    bottom: 1.1rem;
+    top:0;
 
     .top-bar {
       float: left;
