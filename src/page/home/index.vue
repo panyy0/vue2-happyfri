@@ -26,8 +26,10 @@
 
             </div>
 
-            <swiper auto height="4.4rem" dots-position="center" :list="bannerList" v-model="bannerIndex" dots-class="custom-bottom"
-                    @on-index-change="onBannerIndexChange"></swiper>
+            <swiper auto  height="4.4rem" dots-position="center" dots-class="custom-bottom" v-model="bannerIndex" :aspect-ratio="300/800"
+                    @on-index-change="onBannerIndexChange">
+              <swiper-item v-for="(item, index) in bannerList" :key="index"><img :src="item.img"></swiper-item>
+            </swiper>
           </div>
 
           <div class='items'>
@@ -436,6 +438,9 @@
       }
     }
 
+    .vux-indicator.custom-bottom {
+      bottom: -0.16rem;
+    }
   }
 
 
