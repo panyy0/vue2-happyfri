@@ -5,7 +5,7 @@ import actions from './action'
 import ajax from '../config/ajax'
 
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 const state = {
 	level: '第一周', //活动周数
