@@ -26,9 +26,9 @@
 
             </div>
 
-            <swiper auto  height="4.4rem" dots-position="center" dots-class="custom-bottom" v-model="bannerIndex" :aspect-ratio="300/800"
+            <swiper auto  height="4.4rem" dots-position="center" dots-class="custom-bottom" v-model="bannerIndex"
                     @on-index-change="onBannerIndexChange">
-              <swiper-item v-for="(item, index) in bannerList" :key="index"><img :src="item.img"></swiper-item>
+              <swiper-item v-for="(item, index) in bannerList" :key="index"><img :src="item.img" style="height: 4.4rem; width: 100%;"></swiper-item>
             </swiper>
           </div>
 
@@ -108,11 +108,10 @@
           img: BANNER_1,
         }, {
           url: 'http://m.baidu.com',
-          img: 'https://static.vux.li/demo/2.jpg',
+          img: BANNER_1,
         }, {
           url: 'http://m.baidu.com',
-          img: 'https://static.vux.li/demo/5.jpg',
-          fallbackImg: 'https://static.vux.li/demo/3.jpg'
+          img: BANNER_1,
         }]
         ,bannerIndex: 0
 
