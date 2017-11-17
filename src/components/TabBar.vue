@@ -2,7 +2,7 @@
   <div>
     <tabbar>
       <tabbar-item v-for="(item, index) in tabBarList" :link="item.url" @on-item-click="changePage(index, item.url)">
-        <img :style="item.style || ''" slot="icon" :src="$route.path.indexOf(item.url) !== -1 ? (item.selectedImage || item.image) : item.image">
+        <img :style="item.style || ''" slot="icon" :src="imageSrc.indexOf(item.url) !== -1 ? (item.selectedImage || item.image) : item.image">
         <span v-if="item.text" slot="label">{{ item.text }}</span>
       </tabbar-item>
     </tabbar>
@@ -34,41 +34,41 @@
           {
             image: TAB_FIND_ICON
             , selectedImage: TAB_FIND_SELECTED_ICON
-            , active: true
             , text: '发现',
             url: 'home'
           }
           , {
             image: TAB_CLASSIFY_ICON
             , selectedImage: TAB_CLASSIFY_SELECTED_ICON
-            , active: false
             , text: '分类',
             url: 'classify'
           }
           , {
             image: TAB_PLAY_ICON
             , style: 'position: relative; top: -0.2rem; left: -0.2rem; width: 1rem; height: 1rem;'
-            , active: false
             , url: 'play'
           }
           , {
             image: TAB_MARKET_ICON
             , selectedImage: TAB_MARKET_SELECTED_ICON
-            , active: false
             , text: '乐买',
             url: 'market'
           }
           , {
             image: TAB_MINE_ICON
             , selectedImage: TAB_MINE_SELECTED_ICON
-            , active: false
             , text: '我的',
             url: 'mine'
           }
         ]
       }
     }
-    ,computed: {}
+    ,computed: {
+      imageSrc: function() {
+        let path = this.$route.path.substring(this.$route.path.lastIndexOf('/') + 1);
+        return path || 'home';
+      }
+    }
     ,components: {
       Tabbar
       , TabbarItem
