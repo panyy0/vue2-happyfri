@@ -8,7 +8,7 @@
 import SysTabBar from '../../components/TabBar'
 
 export default {
-	name: 'classify',
+	name: 'play',
   	components: {
       SysTabBar
   	},
