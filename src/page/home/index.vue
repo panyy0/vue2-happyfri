@@ -69,9 +69,9 @@
         </div>
       </div>
 
-    <div>
-      <SysTabBar></SysTabBar>
-    </div>
+
+    <SysTabBar></SysTabBar>
+
 
   </div>
 

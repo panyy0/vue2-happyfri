@@ -2,8 +2,8 @@
   <div>
     <tabbar>
       <tabbar-item v-for="(item, index) in tabBarList" :link="item.url" @on-item-click="changePage(index, item.url)">
-        <img :style="item.style || ''" slot="icon" :src="imageSrc.indexOf(item.url) !== -1 ? (item.selectedImage || item.image) : item.image">
-        <span v-if="item.text" slot="label">{{ item.text }}</span>
+        <img :style="item.style || ''" slot="icon" :src="currentPath.indexOf(item.url) !== -1 ? (item.selectedImage || item.image) : item.image">
+        <span :class="currentPath.indexOf(item.url) !== -1 ? 'selected' : 'unSelect'" v-if="item.text" slot="label">{{ item.text }}</span>
       </tabbar-item>
     </tabbar>
   </div>
@@ -64,7 +64,7 @@
       }
     }
     ,computed: {
-      imageSrc: function() {
+      currentPath: function() {
         let path = this.$route.path.substring(this.$route.path.lastIndexOf('/') + 1);
         return path || 'home';
       }
@@ -91,7 +91,13 @@
 </script>
 
 <style lang="less" scoped>
+  .unSelect {
+    color: #666;
+  }
 
+  .selected {
+    color: #ff7391;
+  }
 
   /*底部盒子固定，元素浮动，盒子随着元素个数增加而没有撑大*/
   /*解决方法：使用clear 或者 overflow：hidden;*/
