@@ -18,12 +18,6 @@ export default [{
       path: '/home',
       component: home
     }, {
-        path: '/item',
-        component: r => require.ensure([], () => r(require('../page/item')), 'item')
-    }, {
-        path: '/score',
-        component: r => require.ensure([], () => r(require('../page/score')), 'score')
-    }, {
       path: '/classify',
       component: classify
     }, {
