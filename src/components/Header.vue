@@ -78,7 +78,7 @@
       text-align: center;
       padding: .2rem;
       font-size: 0.34rem;
-
+      letter-spacing: 0.05rem;
       color: #fff;
     }
 
