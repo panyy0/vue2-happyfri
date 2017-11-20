@@ -10,14 +10,6 @@
         <span class='text'>今天想听什么</span>
       </div>
     </div>
-    <!--<div class='top-bar-search'>-->
-      <!--<div class='search-icon-view'>-->
-        <!--<img :src='iconSearch'/>-->
-      <!--</div>-->
-      <!--<div class="section text-view">-->
-        <!--<div class='text'>今天想听什么</div>-->
-      <!--</div>-->
-    <!--</div>-->
 
 
     <img class="top-bar-news" :src='iconNews'/>

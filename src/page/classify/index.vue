@@ -1,16 +1,25 @@
 <template>
   	<div>
+      <SysHeader :title="title"></SysHeader>
     	<SysTabBar></SysTabBar>
   	</div>
 </template>
 
 <script>
-import SysTabBar from '../../components/TabBar'
+import SysTabBar from '../../components/TabBar';
+import SysHeader from '../../components/Header';
 
 export default {
 	name: 'classify',
-  	components: {
+  	data() {
+
+	    return {
+        title: '主题精选'
+      }
+    }
+  	,components: {
       SysTabBar
+      , SysHeader
   	},
   	created(){
 
@@ -19,7 +28,6 @@ export default {
 
 </script>
 
-<style lang="less">
-
+<style lang="less" scoped="page">
 
 </style>

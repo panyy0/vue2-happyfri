@@ -8,7 +8,8 @@ const market = r => require.ensure([], () => r(require('../page/market')), 'mark
 const mine = r => require.ensure([], () => r(require('../page/mine')), 'mine');
 
 
-export default [{
+export default [
+  {
     path: '/',
     component: App,
     children: [{
@@ -18,16 +19,19 @@ export default [{
       path: '/home',
       component: home
     }, {
-      path: '/classify',
-      component: classify
-    }, {
       path: '/play',
       component: play
     }, {
       path: '/market',
       component: market
-    }, {
-      path: '/mine',
-      component: mine
     }]
-}]
+  }
+  , {
+    path: '/classify',
+    component: classify
+  }
+  , {
+    path: '/mine',
+    component: mine
+  }
+]
