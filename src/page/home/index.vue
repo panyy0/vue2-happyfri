@@ -28,7 +28,7 @@
                 <img class='right' src='../../images/tab/home_icon_grass_right@2x.png'/>
               </div>
 
-              <div class='more'>
+              <div class='more' @click="">
                 <span>更多</span>
               </div>
 
@@ -178,6 +178,9 @@
     methods: {
       onBannerIndexChange(index) {
         this.bannerIndex = index;
+      }
+      , toPage(page) {
+
       }
       /**
        * 刷新滚条
