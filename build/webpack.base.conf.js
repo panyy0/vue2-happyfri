@@ -27,7 +27,10 @@ module.exports = vuxLoader.merge({
             'vue$': 'vue/dist/vue.common.js',
             'src': path.resolve(__dirname, '../src'),
             'assets': path.resolve(__dirname, '../src/assets'),
-            'components': path.resolve(__dirname, '../src/components')
+            'components': path.resolve(__dirname, '../src/components'),
+            'images': path.resolve(__dirname, '../src/images'),
+            'config': path.resolve(__dirname, '../src/config'),
+            'page': path.resolve(__dirname, '../src/page')
         }
     },
     resolveLoader: {

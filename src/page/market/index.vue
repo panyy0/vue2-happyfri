@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SysTabBar from '../../components/TabBar'
+import SysTabBar from 'components/TabBar'
 
 export default {
 	name: 'market',
