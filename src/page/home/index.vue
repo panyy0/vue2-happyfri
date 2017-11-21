@@ -31,6 +31,7 @@
               <router-link  to="theme" tag="div" class="more">
                 <span>更多</span>
               </router-link>
+              <!--<div class="more" @click="test()"><span @click="test()">更多</span></div>-->
 
             </div>
 
@@ -61,8 +62,8 @@
   import {Swiper, SwiperItem} from 'vux';
   import SysTabBar from '../../components/TabBar'
   import SysTopBar from '../../components/TopBar'
-  import IScroll from "iscroll";
-
+//  import IScroll from "iscroll";
+  import BScroll from "better-scroll";
   import BANNER_1 from '../../images/banner/banner@2x.png';
 
 
@@ -161,23 +162,21 @@
     mounted: function() {
       let self = this;
       self.$nextTick(function() {
-        self.homeScroll = new IScroll('#homeContainer', {
-          useTransform: true,
-          // scrollbars: true,
-          tap : true,
-          disableMouse: true,
-          disableTouch:false,
-          disablePointer: true
+        self.homeScroll = new BScroll('#homeContainer', {
+          deceleration: 0.001,
+          bounce: true,
+          swipeTime: 1800,
+          click: true
         });
-
-
-
       })
 
     },
     methods: {
       onBannerIndexChange(index) {
         this.bannerIndex = index;
+      }
+      ,test() {
+          alert('test');
       }
       /**
        * 刷新滚条

@@ -49,12 +49,15 @@
 <style lang="less" scoped>
 
   .sys-header {
-    position: relative;
+    position: fixed;
     padding: 0.03rem 0;
     box-sizing: border-box;
     background-color: #ff7391;
     width: 100%;
     height: 0.88rem;
+    z-index: 9999;
+    left: 0;
+    top: 0;
 
     .sys-header-left {
       left: 0.18rem;
