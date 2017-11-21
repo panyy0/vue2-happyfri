@@ -1,11 +1,11 @@
 import App from '../App'
 
-
-const home = r => require.ensure([], () => r(require('page/home')), 'home');
-const classify = r => require.ensure([], () => r(require('page/classify')), 'classify');
-const play = r => require.ensure([], () => r(require('page/play')), 'play');
-const market = r => require.ensure([], () => r(require('page/market')), 'market');
-const mine = r => require.ensure([], () => r(require('page/mine')), 'mine');
+const HOME = r => require.ensure([], () => r(require('page/home')), 'home');
+const CLASSIFY = r => require.ensure([], () => r(require('page/classify')), 'classify');
+const PLAY = r => require.ensure([], () => r(require('page/play')), 'play');
+const MARKET = r => require.ensure([], () => r(require('page/market')), 'market');
+const MINE = r => require.ensure([], () => r(require('page/mine')), 'mine');
+const THEME = r => require.ensure([], () => r(require('page/theme')));
 
 
 export default [
@@ -14,24 +14,26 @@ export default [
     component: App,
     children: [{
         path: '',
-        component: home
+        redirect: '/home'
     }, {
-      path: '/home',
-      component: home
+      path: '/home'
+      , component: HOME
+    }, {
+      path: '/classify',
+      component: CLASSIFY
     }, {
       path: '/play',
-      component: play
+      component: PLAY
+    } , {
+      path: '/mine',
+      component: MARKET
     }, {
       path: '/market',
-      component: market
+      component: MINE
+    },{
+      path: '/theme'
+      , component: THEME
     }]
   }
-  , {
-    path: '/classify',
-    component: classify
-  }
-  , {
-    path: '/mine',
-    component: mine
-  }
+
 ]

@@ -28,9 +28,9 @@
                 <img class='right' src='../../images/tab/home_icon_grass_right@2x.png'/>
               </div>
 
-              <div class='more' @click="">
+              <router-link  to="theme" tag="div" class="more">
                 <span>更多</span>
-              </div>
+              </router-link>
 
             </div>
 
@@ -178,9 +178,6 @@
     methods: {
       onBannerIndexChange(index) {
         this.bannerIndex = index;
-      }
-      , toPage(page) {
-
       }
       /**
        * 刷新滚条

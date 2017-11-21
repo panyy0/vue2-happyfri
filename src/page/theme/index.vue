@@ -5,7 +5,7 @@
       <div class="container">
         <div>
           <div class="item" v-for="(item, index) in classifyList">
-            <div class="new"></div>
+            <div :class="item.isNew ? 'new' : ''"></div>
             <div class="title">
               {{ item.title }}
             </div>
@@ -99,7 +99,7 @@ export default {
         height: 0.52rem;
         width: 0.52rem;
         margin: 0.2rem 0 0 0.2rem;
-        background-image: url("../../../images/common/label_new@2x.png");
+        background-image: url("../../images/common/label_new@2x.png");
         background-size: 100% 100%;
         -moz-background-size: 100% 100%;
         -webkit-background-size: 100% 100%;
