@@ -7,7 +7,8 @@ import "./config/rem";
 
 Vue.use(VueRouter);
 const router = new VueRouter({
-	routes
+  mode: 'history'
+  , routes: routes
 });
 
 new Vue({

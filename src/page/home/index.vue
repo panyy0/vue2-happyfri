@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-      <div class="home_container"  id="homeContainer">
+      <div class="home-container"  id="homeContainer">
         <div>
           <div>
             <SysTopBar></SysTopBar>
@@ -48,11 +48,7 @@
 
         </div>
       </div>
-
-
     <SysTabBar></SysTabBar>
-
-
   </div>
 
 
@@ -192,7 +188,7 @@
 </script>
 
 <style lang="less" scoped>
-  .home_container {
+  .home-container {
 
     background: #f4f4f4;
     position: absolute;

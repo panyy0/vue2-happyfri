@@ -1,9 +1,8 @@
 <template>
   <div>
     <SysHeader :title="title"></SysHeader>
-
-    <div id="container" class="container">
-      <div>
+    <div id="wrapper" >
+      <div class="container">
         <div class="item" v-for="(item, index) in classifyList">
           <div :class="item.isNew ? 'new' : ''"></div>
           <div class="title">
@@ -22,8 +21,8 @@
         </div>
       </div>
     </div>
-
   </div>
+
 </template>
 
 <script>
@@ -83,7 +82,7 @@
     mounted: function () {
       let self = this;
       self.$nextTick(function () {
-//        self.containerScroll = new IScroll('#container', {
+//        self.containerScroll = new IScroll('#wrapper', {
 //          useTransform: true,
 //          tap: true,
 //          click: true,
@@ -92,12 +91,13 @@
 //          disablePointer: true
 //        });
 
-          self.containerScroll = new BScroll('#container', {
-            deceleration: 0.001,
-            bounce: true,
-            swipeTime: 1800,
-            click: true
-          })
+        self.containerScroll = new BScroll('#wrapper', {
+          deceleration: 0.001,
+          bounce: true,
+          swipeTime: 1800,
+          click: true,
+          tap: true
+        })
       });
 
     },
@@ -120,100 +120,112 @@
 </script>
 
 <style lang="less" scoped="page">
-  .container {
-    background-color: #fff;
-    padding: 0 0.22rem;
 
-    .item {
-      position: relative;
-      margin-top: 0.22rem;
-      height: 3.62rem;
-      img {
-        width: 100%;
-        height: 100%;
-        border-radius: 0.12rem;
-      }
+  #wrapper {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    bottom: 0.1rem;
+    width: 100%;
+    .container {
+      background-color: #fff;
+      padding:0.22rem;
 
-      .new {
-        position: absolute;
-        height: 0.52rem;
-        width: 0.52rem;
-        margin: 0.2rem 0 0 0.2rem;
-        background-image: url("../../images/common/label_new@2x.png");
-        background-size: 100% 100%;
-        -moz-background-size: 100% 100%;
-        -webkit-background-size: 100% 100%;
-      }
-
-      .title {
-        position: absolute;
-        top: 1.36rem;
-        width: 100%;
-        text-align: center;
-        color: #fff;
-        font-size: .36rem;
-      }
-
-      .title-line {
-        border: 0.02rem solid #fff;
-        top: 2.02rem;
-        position: absolute;
-        margin: 0 2.7rem;
-        width: 1.6rem;
-      }
-
-      .info {
-        position: absolute;
-        top: 2.32rem;
-        width: 100%;
-        height: 0.3rem;
-
-        .info-img {
-          float: left;
-          position: absolute;
-          left: 43%;
+      .item {
+        position: relative;
+        margin-top: 0.22rem;
+        height: 3.62rem;
+        &:first-child{
+          margin-top: 0;
+        }
+        img {
+          width: 100%;
           height: 100%;
-          img {
+          border-radius: 0.12rem;
+        }
+
+        .new {
+          position: absolute;
+          height: 0.52rem;
+          width: 0.52rem;
+          margin: 0.2rem 0 0 0.2rem;
+          background-image: url("../../images/common/label_new@2x.png");
+          background-size: 100% 100%;
+          -moz-background-size: 100% 100%;
+          -webkit-background-size: 100% 100%;
+        }
+
+        .title {
+          position: absolute;
+          top: 1.36rem;
+          width: 100%;
+          text-align: center;
+          color: #fff;
+          font-size: .36rem;
+        }
+
+        .title-line {
+          border: 0.02rem solid #fff;
+          top: 2.02rem;
+          position: absolute;
+          margin: 0 2.7rem;
+          width: 1.6rem;
+        }
+
+        .info {
+          position: absolute;
+          top: 2.32rem;
+          width: 100%;
+          height: 0.3rem;
+
+          .info-img {
             float: left;
-            margin: 0.02rem;
+            position: absolute;
+            left: 43%;
+            height: 100%;
+            img {
+              float: left;
+              margin: 0.02rem;
+              width: 0.3rem;
+              height: 0.3rem;
+            }
+          }
+
+          .info-txt {
+            float: right;
+            height: 100%;
+            position: absolute;
+            right: 43%;
+            margin-left: 10px;
+            color: #fff;
+            font-size: 0.22rem;
+            text-align: center;
+          }
+
+        }
+
+        .operate {
+          position: absolute;
+          bottom: 0.17rem;
+          width: 100%;
+          height: 0.3rem;
+
+          .share {
+            position: absolute;
             width: 0.3rem;
             height: 0.3rem;
+            right: 0.87rem;
           }
-        }
 
-        .info-txt {
-          float: right;
-          height: 100%;
-          position: absolute;
-          right: 43%;
-          margin-left: 10px;
-          color: #fff;
-          font-size: 0.22rem;
-          text-align: center;
-        }
-
-      }
-
-      .operate {
-        position: absolute;
-        bottom: 0.17rem;
-        width: 100%;
-        height: 0.3rem;
-
-        .share {
-          position: absolute;
-          width: 0.3rem;
-          height: 0.3rem;
-          right: 0.87rem;
-        }
-
-        .more {
-          position: absolute;
-          width: 0.3rem;
-          height: 0.3rem;
-          right: 0.3rem;
+          .more {
+            position: absolute;
+            width: 0.3rem;
+            height: 0.3rem;
+            right: 0.3rem;
+          }
         }
       }
     }
   }
+
 </style>
