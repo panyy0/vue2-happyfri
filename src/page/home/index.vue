@@ -58,7 +58,6 @@
   import {Swiper, SwiperItem} from 'vux';
   import SysTabBar from '../../components/TabBar'
   import SysTopBar from '../../components/TopBar'
-//  import IScroll from "iscroll";
   import BScroll from "better-scroll";
   import BANNER_1 from '../../images/banner/banner@2x.png';
 

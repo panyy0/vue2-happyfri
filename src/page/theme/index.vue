@@ -27,7 +27,6 @@
 
 <script>
   import SysHeader from 'components/Header';
-//  import IScroll from "iscroll";
   import BScroll from "better-scroll";
   import ICON_NUMBER from 'images/common/icon_number@2x.png';
   import ICON_SHARE from 'images/common/icon_share@2x.png';
