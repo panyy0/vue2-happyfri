@@ -81,14 +81,6 @@
     mounted: function () {
       let self = this;
       self.$nextTick(function () {
-//        self.containerScroll = new IScroll('#wrapper', {
-//          useTransform: true,
-//          tap: true,
-//          click: true,
-//          disableMouse: true,
-//          disableTouch: false,
-//          disablePointer: true
-//        });
 
         self.containerScroll = new BScroll('#wrapper', {
           deceleration: 0.001,

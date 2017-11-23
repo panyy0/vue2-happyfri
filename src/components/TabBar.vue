@@ -99,6 +99,17 @@
     color: #ff7391;
   }
 
+  .weui-tabbar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position:fixed;
+    z-index: 500;
+    bottom: 0;
+    width: 100%;
+    background-color: #F7F7FA;
+  }
   /*底部盒子固定，元素浮动，盒子随着元素个数增加而没有撑大*/
   /*解决方法：使用clear 或者 overflow：hidden;*/
 </style>
