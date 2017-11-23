@@ -26,10 +26,10 @@ export default [
       component: PLAY
     } , {
       path: '/mine',
-      component: MARKET
+      component: MINE
     }, {
       path: '/market',
-      component: MINE
+      component: MARKET
     },{
       path: '/theme'
       , component: THEME
