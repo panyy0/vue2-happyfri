@@ -14,52 +14,22 @@
       </div>
 
       <div class="order">
-        <div class="group">
-          <div class="cell" v-for="item in orderGroupList">
-            <div class="left-child">
-              <div class="inner">
-                <img :src="item.leftIcon" />
-              </div>
-              <div class="inner">
-                <span>{{ item.title }}</span>
-              </div>
-            </div>
+        <MGroup :groupList="orderGroupList"></MGroup>
 
-            <div class="center-child"></div>
-            <div class="right-child">
-              <img :src="item.rightIcon" />
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="setting">
-        <div class="group">
-          <div class="cell" v-for="item in settingGroupList">
-            <div class="left-child">
-              <div class="inner">
-                <img :src="item.leftIcon" />
-              </div>
-              <div class="inner">
-                <span>{{ item.title }}</span>
-              </div>
-            </div>
+        <MGroup :groupList="settingGroupList"></MGroup>
 
-            <div class="center-child"></div>
-            <div class="right-child">
-              <img :src="item.rightIcon" />
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-
     <MTabBar></MTabBar>
   </div>
 </template>
 
 <script>
   import MTabBar from 'components/MTabBar'
+  import MGroup from 'components/MGroup'
   import {Group, Cell} from 'vux';
   import ICON_ARROW from 'images/mine/icon_arrow@2x.png';
   import ICON_DOWNLOAD from 'images/mine/icon_download@2x.png';
@@ -128,6 +98,7 @@
     }
     , components: {
       MTabBar
+      , MGroup
       , Group
       , Cell
     },
@@ -213,63 +184,6 @@
       .setting {
         margin-top: 0.16rem;
         overflow: hidden;
-      }
-
-
-
-      .group {
-        border-bottom: 0.02rem solid #ededed;
-        background-color: #fff;
-
-        .cell {
-          height: 0.92rem;
-          font-size: 0;
-          padding: 0.24rem 0.16rem 0.24rem 0.19rem;
-          .left-child {
-            height: 100%;
-            width: 2.89rem;
-            display: inline-block;
-
-            .inner {
-              height: 100%;
-              display: inline;
-              position: relative;
-              overflow: hidden;
-              margin-right: 0.24rem;
-              img {
-                width: 0.44rem;
-                height: 0.44rem;
-              }
-
-              span {
-                position: relative;
-                bottom: 0.12rem;
-                height: 100%;
-                font-size: 0.28rem;
-                color: #505050;
-              }
-            }
-          }
-
-
-          .center-child {
-            display: inline-block;
-            width: 4rem;
-          }
-
-          .right-child {
-            display: inline-block;
-            width: 0.26rem;
-            height: 100%;
-            img {
-              position: relative;
-              width: 0.26rem;
-              height: 0.26rem;
-              bottom: 0.08rem;
-            }
-
-          }
-        }
       }
     }
   }
