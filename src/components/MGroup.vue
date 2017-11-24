@@ -6,12 +6,11 @@
         <div class="inner">
           <img :src="item.leftIcon" />
         </div>
-        <div class="inner">
-          <span>{{ item.title }}</span>
-        </div>
       </div>
 
-      <div class="center-child"></div>
+      <div class="center-child">
+        <span>{{ item.title }}</span>
+      </div>
       <div class="right-child">
         <img :src="item.rightIcon" />
       </div>
@@ -61,11 +60,11 @@
     .cell {
       height: 0.92rem;
       font-size: 0;
-      padding: 0.24rem 0.16rem 0.24rem 0.19rem;
+      display: flex;
+      display: -webkit-flex;
       .left-child {
         height: 100%;
-        width: 2.89rem;
-        display: inline-block;
+        width: 0.68rem;
 
         .inner {
           height: 100%;
@@ -76,33 +75,39 @@
           img {
             width: 0.44rem;
             height: 0.44rem;
+            margin: 0.24rem;
           }
 
-          span {
-            position: relative;
-            bottom: 0.12rem;
-            height: 100%;
-            font-size: 0.28rem;
-            color: #505050;
-          }
+
         }
       }
 
 
       .center-child {
-        display: inline-block;
-        width: 4rem;
+        width: 6.42rem;
+        height: 100%;
+        border-top: 0.01rem solid #ededed;
+        margin-top: -0.02rem;
+        span {
+          position: relative;
+          height: 100%;
+          font-size: 0.28rem;
+          color: #505050;
+          top: 30%;
+          left: 0.24rem;
+        }
       }
 
       .right-child {
-        display: inline-block;
-        width: 0.26rem;
+        width: 0.42rem;
         height: 100%;
+        border-top: 0.01rem solid #ededed;
+        margin-top: -0.02rem;
         img {
           position: relative;
           width: 0.26rem;
           height: 0.26rem;
-          bottom: 0.08rem;
+          top: 35%;
         }
 
       }
