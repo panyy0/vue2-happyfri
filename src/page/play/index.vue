@@ -1,16 +1,16 @@
 <template>
   	<div>
-    	<SysTabBar></SysTabBar>
+    	<MTabBar></MTabBar>
   	</div>
 </template>
 
 <script>
-import SysTabBar from 'components/TabBar'
+import MTabBar from 'components/MTabBar'
 
 export default {
 	name: 'play',
   	components: {
-      SysTabBar
+      MTabBar
   	},
   	created(){
 

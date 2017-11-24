@@ -27,7 +27,7 @@
   import TAB_MINE_SELECTED_ICON from '../images/tab/home_icon_mine_selected@2x.png';
 
   export default {
-    name: 'SysTabBar'
+    name: 'MTabBar'
     ,data () {
       return {
         tabBarList: [

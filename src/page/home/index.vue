@@ -3,7 +3,7 @@
       <div class="home-container"  id="homeContainer">
         <div>
           <div>
-            <SysTopBar></SysTopBar>
+            <MTopBar></MTopBar>
 
             <swiper auto  height="4.4rem" dots-position="center" dots-class="custom-bottom" v-model="bannerIndex"
                     @on-index-change="onBannerIndexChange">
@@ -48,7 +48,7 @@
 
         </div>
       </div>
-    <SysTabBar></SysTabBar>
+    <MTabBar></MTabBar>
   </div>
 
 
@@ -56,8 +56,8 @@
 
 <script>
   import {Swiper, SwiperItem} from 'vux';
-  import SysTabBar from '../../components/TabBar'
-  import SysTopBar from '../../components/TopBar'
+  import MTabBar from '../../components/MTabBar'
+  import MTopBar from '../../components/MTopBar'
   import BScroll from "better-scroll";
   import BANNER_1 from '../../images/banner/banner@2x.png';
 
@@ -143,8 +143,8 @@
       }
     },
     components: {
-      SysTabBar
-      , SysTopBar
+      MTabBar
+      , MTopBar
       , Swiper
       , SwiperItem
     },

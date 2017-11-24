@@ -22,7 +22,7 @@
   import {XHeader} from 'vux';
 
   export default {
-    name: 'SysHeader'
+    name: 'MHeader'
     , data () {
       return {
           returnIcon: ICON_RETURN

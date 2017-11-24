@@ -28,7 +28,7 @@
   import ICON_NEWS from '../images/tab/home_icon_news@2x.png';
 
   export default {
-    name: 'SysTopBar'
+    name: 'MTopBar'
     ,data () {
       return {
         iconBaby: ICON_BABY
