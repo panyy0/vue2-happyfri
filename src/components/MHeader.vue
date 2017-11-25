@@ -6,11 +6,13 @@
         <img :src="returnIcon"/>
       </a>
     </div>
-
     <div v-else class="sys-header-left">
     </div>
     <h1 class="sys-header-title">{{ title }}</h1>
-    <!--<div class="sys-header-right"></div>-->
+    <div class="sys-header-right">
+      <span>年龄筛选</span>
+      <img :src="image"/>
+    </div>
   </div>
 
 
@@ -21,8 +23,6 @@
 
   import ICON_RETURN from '../images/common/icon_return@2x.png';
 
-  import {XHeader} from 'vux';
-
   export default {
     name: 'MHeader'
     , data () {
@@ -30,10 +30,9 @@
           returnIcon: ICON_RETURN
       }
     }
-    , props: ['isBack', 'title']
+    , props: ['isBack', 'title', 'image']
     , computed: {}
     , components: {
-      XHeader
     },
     created(){
     },
@@ -89,6 +88,11 @@
 
     .sys-header-right {
       right: 0.15rem;
+
+      span {
+        color: #fff;
+        font-size: 0.26rem;
+      }
     }
   }
 

@@ -1,11 +1,13 @@
 <template>
   	<div>
+    	<MHeader :title="headerData.title"></MHeader>
     	<MTabBar></MTabBar>
   	</div>
 </template>
 
 <script>
 import MTabBar from 'components/MTabBar';
+import MHeader from 'components/MHeader';
 
 
 export default {
@@ -13,10 +15,14 @@ export default {
   	data() {
 
 	    return {
+	      headerData: {
+	        title: '分类'
+        }
       }
     }
   	,components: {
       MTabBar
+    , MHeader
   	},
   	created(){
 
