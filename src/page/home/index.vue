@@ -20,26 +20,27 @@
             </div>
           </div>
 
-          <div class='recommendation-items' >
-            <div class='recommendation-item-title'>
-              <div class='title-text'>
-                <img class='left' src='../../images/tab/home_icon_grass_right@2x.png'/>
-                <span class='text'>今日推荐</span>
-                <img class='right' src='../../images/tab/home_icon_grass_right@2x.png'/>
+
+
+          <div class="recommendation">
+            <div class="title">
+              <div class="content">
+                <img src='../../images/tab/home_icon_grass_right@2x.png'/>
+                <span>每日推荐</span>
+                <img src='../../images/tab/home_icon_grass_right@2x.png'/>
+              </div>
+              <div class="more">
+                <span>更多</span>
               </div>
 
-              <router-link  to="theme" tag="div" class="more">
-                <span>更多</span>
-              </router-link>
-              <!--<div class="more" @click="test()"><span @click="test()">更多</span></div>-->
 
             </div>
 
-            <div>
-              <div class='recommendation-item-content' v-for="item in recommendList" >
-                <div >
+            <div class="books">
+              <div class="book" v-for="item in recommendList">
+                <div>
                   <img :src="item.url"/>
-                  <span class='text'>{{ item.name }}</span>
+                  <span>{{ item.name }}</span>
                 </div>
               </div>
             </div>
@@ -261,82 +262,84 @@
       }
     }
 
-
-    .recommendation-items {
-      margin: 0.16rem 0 0.14rem 0;
-      padding: 0.5rem 0.22rem;
+    .recommendation {
+      position: relative;
       width: 100%;
-      background: #fff;
-      overflow: hidden;
+      padding: 0.5rem 0.2rem;
+      margin-top: 0.16rem;
+      background-color: #fff;
 
-      .recommendation-item-title {
-        /* text-align: center;  */
-        margin-bottom: 0.5rem;
-        overflow: hidden;
+      .title {
+        position: relative;
+        width: 100%;
+        display: flex;
 
-        .title-text {
-          float: left;
-          margin-left: 2.3rem;
+        .content {
+          overflow: hidden;
+          display: flex;
+          position: relative;
+          margin: 0 auto;
 
           img {
             width: 0.3rem;
             height: 0.3rem;
-          }
-
-          .left {
-            margin-right: 0.22rem;
-            margin-top: 0.08rem;
-          }
-
-          .right {
-            margin-left: 0.22rem;
-            margin-top: 0.08rem;
+            margin: auto 0;
           }
 
           span {
-            float: left;
-            color:#222222;
+            color: #222;
             font-size: 0.34rem;
+            margin: auto 0.2rem;
           }
         }
 
         .more {
-          float: right;
-          margin: 0.05rem 0.46rem 0 0;
+          overflow: hidden;
+          display: flex;
+          position: absolute;
+          right: 0;
+          top: 0.05rem;
 
           span {
-            float: right;
-            margin-top: 0.05rem;
             color: #666;
             font-size: 0.24rem;
           }
         }
+
       }
 
-      .recommendation-item-content {
-        float: left;
-        text-align: center;
-        margin-right: 0.38rem;
+      .books {
+        margin-top: 0.5rem;
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
-        img {
-          width: 2.1rem;
-          height: 2.1rem;
-          display: block;
-          margin-bottom: 0.26rem;
+        .book {
+          display: flex;
+          display: -webkit-flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          div {
+            img {
+              display: block;
+              width: 2.1rem;
+              height: 2.1rem;
+            }
+
+            span {
+              display: block;
+              text-align: center;
+              color: #222;
+              font-size: 0.26rem;
+              margin-top: 0.26rem;
+            }
+          }
         }
-
-        .text {
-          color:#222222;
-          font-size: 0.26rem;
-          position: relative;
-          top: -0.84rem;
-        }
-      }
-
-      .recommendation-item-content:nth-child(3n + 0) {
-        margin-right: 0;
       }
     }
+
 
     .vux-indicator.custom-bottom {
       bottom: -0.16rem;
