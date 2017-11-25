@@ -1,11 +1,13 @@
 <template>
 
   <div class="sys-header">
-    <div class="sys-header-left" @click="goBack">
+    <div v-if="isBack" class="sys-header-left" @click="goBack">
       <a class="sys-header-back">
         <img :src="returnIcon"/>
       </a>
-      <!--<div class="left-arrow"></div>-->
+    </div>
+
+    <div v-else class="sys-header-left">
     </div>
     <h1 class="sys-header-title">{{ title }}</h1>
     <!--<div class="sys-header-right"></div>-->
@@ -28,7 +30,7 @@
           returnIcon: ICON_RETURN
       }
     }
-    , props: ['title']
+    , props: ['isBack', 'title']
     , computed: {}
     , components: {
       XHeader

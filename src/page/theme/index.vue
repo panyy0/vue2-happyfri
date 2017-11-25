@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MHeader :title="title"></MHeader>
+    <MHeader :title="headData.title" :isBack="headData.isBack"></MHeader>
     <div id="wrapper" >
       <div class="container">
         <div class="item" v-for="(item, index) in classifyList">
@@ -43,7 +43,11 @@
     data() {
 
       return {
-        title: '主题精选'
+
+        headData: {
+          title: '主题精选'
+          , isBack: true
+        }
         , iconNumber: ICON_NUMBER
         , iconShare: ICON_SHARE
         , iconMore: ICON_MORE
