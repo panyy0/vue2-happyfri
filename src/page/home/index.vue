@@ -64,7 +64,7 @@
   import {Swiper, SwiperItem} from 'vux';
   import MTabBar from '../../components/MTabBar'
   import MTopBar from '../../components/MTopBar'
-  import BScroll from "better-scroll";
+//  import BScroll from "better-scroll";
   import BANNER_1 from '../../images/banner/banner@2x.png';
 
 
@@ -162,15 +162,6 @@
       }, 2000);
     },
     mounted: function() {
-      let self = this;
-      self.$nextTick(function() {
-        self.homeScroll = new BScroll('#homeContainer', {
-          deceleration: 0.001,
-          bounce: true,
-          swipeTime: 1800,
-          click: true
-        });
-      })
 
     },
     methods: {
@@ -180,15 +171,7 @@
       ,test() {
           alert('test');
       }
-      /**
-       * 刷新滚条
-       */
-      ,scrollReflesh: function() {
-        let self = this;
-        self.$nextTick(() => {
-          self.homeScroll.refresh();
-        });
-      }
+
     }
   }
 </script>
@@ -200,6 +183,7 @@
     position: absolute;
     bottom: 1.1rem;
     top:0;
+    overflow-y: auto;
 
     .mod {
       top: 0.2rem;

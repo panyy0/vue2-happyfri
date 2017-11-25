@@ -48,7 +48,7 @@
   import ICON_DOWNLOAD from 'images/mine/icon_download@2x.png';
   import ICON_ANCHOR from 'images/mine/icon_anchor@2x.png';
   import ICON_COURSE from 'images/mine/icon_course@2x.png';
-  import BScroll from "better-scroll";
+//  import BScroll from "better-scroll";
   import ICON_HISTORY from "images/mine/icon_history@2x.png";
   import ICON_ORDER from 'images/mine/icon_order@2x.png';
   import ICON_FAVORITE from 'images/mine/icon_collection@2x.png';
@@ -126,15 +126,6 @@
 
     }
     , mounted: function() {
-      let self = this;
-      self.$nextTick(function() {
-        self.homeScroll = new BScroll('#wrapper', {
-          deceleration: 0.001,
-          bounce: true,
-          swipeTime: 1800,
-          click: true
-        });
-      })
 
     }
     , methods: {
@@ -154,6 +145,7 @@
     left: 0;
     width: 100%;
     bottom: 1.4rem;
+    overflow-y: auto;
     .container {
       background-color: #f2f2f2;
 

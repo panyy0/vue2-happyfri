@@ -54,7 +54,6 @@
 
 <style lang="less" scoped>
   .group {
-    border-bottom: 0.02rem solid #ededed;
     background-color: #fff;
 
     .cell {
@@ -62,10 +61,11 @@
       font-size: 0;
       display: flex;
       display: -webkit-flex;
+
       .left-child {
         height: 100%;
         width: 0.68rem;
-
+        margin-right: 0.2rem;
         .inner {
           height: 100%;
           display: inline;
@@ -94,7 +94,6 @@
           font-size: 0.28rem;
           color: #505050;
           top: 30%;
-          left: 0.24rem;
         }
       }
 

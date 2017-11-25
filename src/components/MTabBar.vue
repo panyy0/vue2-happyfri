@@ -108,7 +108,24 @@
     z-index: 500;
     bottom: 0;
     width: 100%;
-    background-color: #F7F7FA;
+    background-color: #fff;
+  }
+
+  .weui-tabbar:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #eee;
+    color: #C0BFC4;
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    -ms-transform: scaleY(0.5);
+    transform: scaleY(0.5);
   }
   /*底部盒子固定，元素浮动，盒子随着元素个数增加而没有撑大*/
   /*解决方法：使用clear 或者 overflow：hidden;*/
