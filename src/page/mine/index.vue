@@ -153,9 +153,10 @@
     top: 0;
     left: 0;
     width: 100%;
-
+    bottom: 1.4rem;
     .container {
       background-color: #f2f2f2;
+
       .info {
         height: 6.92rem;
 

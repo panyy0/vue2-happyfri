@@ -13,7 +13,12 @@
 
           <div class='items'>
             <div class='item' v-for="item in itemList">
-              <div class="item-content">
+              <router-link :to="item.to" tag="div" class="item-content" v-if="item.to">
+                <img :src="item.url"/>
+                <span>{{ item.name }}</span>
+              </router-link>
+
+              <div v-else class="item-content">
                 <img :src="item.url"/>
                 <span>{{ item.name }}</span>
               </div>
@@ -100,6 +105,7 @@
           , {
             'url': ITEM_THEME
             , 'name': '主题精选'
+            , 'to': 'theme'
           }
           , {
             'url': ITEM_ANCHOR
