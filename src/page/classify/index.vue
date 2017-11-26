@@ -1,6 +1,6 @@
 <template>
   	<div>
-    	<MHeader :title="headerData.title"></MHeader>
+    	<MHeader :title="headerData.title" :iconRight="headerData.iconRight" :contentRight="headerData.contentRight"></MHeader>
     	<MTabBar></MTabBar>
   	</div>
 </template>
@@ -9,6 +9,8 @@
 import MTabBar from 'components/MTabBar';
 import MHeader from 'components/MHeader';
 
+import ICON_RIGHT from 'images/classify/icon_screen@2x.png'
+
 
 export default {
 	name: 'classify',
@@ -16,15 +18,20 @@ export default {
 
 	    return {
 	      headerData: {
-	        title: '分类'
+	        'title': '分类'
+          , 'iconRight': ICON_RIGHT
+          , 'contentRight': '年龄筛选'
         }
       }
     }
   	,components: {
       MTabBar
     , MHeader
-  	},
-  	created(){
+  	}
+  	, methods: {
+
+    }
+  	, created(){
 
   	}
 }

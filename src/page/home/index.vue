@@ -156,10 +156,7 @@
       , SwiperItem
     },
     created(){
-      let self = this;
-      setTimeout(function () {
-        self.scrollReflesh();
-      }, 2000);
+
     },
     mounted: function() {
 
@@ -168,9 +165,7 @@
       onBannerIndexChange(index) {
         this.bannerIndex = index;
       }
-      ,test() {
-          alert('test');
-      }
+
 
     }
   }
