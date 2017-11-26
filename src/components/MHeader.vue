@@ -14,10 +14,6 @@
       <img v-if="iconRight" :src="iconRight"/>
       <span v-if="contentRight">{{ contentRight }}</span>
     </div>
-    <!--<div class="right" v-else>-->
-      <!--<img v-if="iconRight" :src="iconRight"/>-->
-      <!--<span v-if="contentRight">{{ contentRight }}</span>-->
-    <!--</div>-->
 
   </div>
 
